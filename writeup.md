@@ -46,12 +46,14 @@ In the final step I combined the line image with the original image.
 ![Weighted image](./writeup_images/weighted.png "Weighted image")
 
 This pipeline worked well on the still images as well as on the two images. However, when I tested it on the challenge video I got mixed results.
+
 ![Unfiltered detection](./writeup_images/challenge_unfiltered.gif "Unfiltered detection")
 
 The concrete and shadows make line detection sketchy and result in jumpy lanes.
 We can assume that even though a lane is not detected it is still there and not deviating too much from the previous frame.
 By implementing a simple moving average filter I was able to produce a much smoother result.
 I kept a record of the last 30 lanes found and used their average to draw my lanes.
+
 ![Filtered detection](./writeup_images/challenge.gif "Filtered detection")
 
 ### 2. Identify potential shortcomings with your current pipeline
